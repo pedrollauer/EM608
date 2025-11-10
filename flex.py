@@ -56,14 +56,11 @@ print(f"fs = {a}")
 C1 = (2*Ra - w0*h) 
 for i in range(0,tamanho_x):
     v[i] = -w0*f_s(x[i], 0,1) + Ra*f_s(x[i], 0,0) + Ra*f_s(x[i], h,0)
-    #v[i] =  Ra*f_s(x[i], 1.5,0) 
     m[i] = -w0*f_s(x[i], 0,2) + Ra*f_s(x[i], 0,1) + Ra*f_s(x[i], h,1)
     theta[i] = w0*f_s(x[i], 0,3) + Ra*f_s(x[i], 0,2) + Ra*f_s(x[i], h,2)
     delta[i] = w0*f_s(x[i], 0,4) + Ra*f_s(x[i], 0,3) + Ra*f_s(x[i], h,3)
-    # delta[i] = w0*f_s(x[i], 0,2) + Ra*f_s(x[i], 0,1) + Ra*f_s(x[i], h,1)
 
 ## CC
-
 
 print(f"C1={C1}")
 print(f"W0={w0}")
