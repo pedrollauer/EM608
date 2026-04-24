@@ -1,0 +1,509 @@
+Ouverture en écriture du fichier ./vola.1
+
+<INFO> Démarrage de l'exécution.
+
+                                                                                   
+   ___         _         _       _            __      ___         _                
+  / __|___  __| |___    /_\   __| |_ ___ _ _  \ \    / (_)_ _  __| |_____ __ _____ 
+ | (__/ _ \/ _` / -_)  / _ \ (_-<  _/ -_) '_|  \ \/\/ /| | ' \/ _` / _ \ V  V (_-< 
+  \___\___/\__,_\___| /_/ \_\/__/\__\___|_|     \_/\_/ |_|_||_\__,_\___/\_/\_//__/ 
+                                                 https://code-aster-windows.com    
+                       -- CODE_ASTER -- VERSION : DÉVELOPPEMENT (unstable) --                       
+                               Version 16.7.9 modifiée le 04/04/2018                                
+                           révision 5029d61da970 - branche 'windows-v16'                            
+                                   Copyright EDF R&D 1991 - 2026                                    
+                                                                                                    
+                              Exécution du : Thu Apr 23 13:12:47 2026                               
+                                        Nom de la machine :                                         
+                                              BR-LAUER                                              
+                                        Architecture : 64bit                                        
+                                     Type de processeur : AMD64                                     
+                                      Système d'exploitation :                                      
+                                     Windows-10-10.0.26100-SP0                                      
+                                 Langue des messages : pt (cp1252)                                  
+                                     Version de Python : 3.7.2                                      
+                                     Version de NumPy : 1.16.1                                      
+                                     Parallélisme MPI : inactif                                     
+                                    Parallélisme OpenMP : actif                                     
+                              Nombre de processus OpenMP utilisés : 4                               
+                               Version de la librairie HDF5 : 1.10.9                                
+                                Version de la librairie MED : 4.1.1                                 
+                                 Librairie MFront : non disponible                                  
+                               Version de la librairie MUMPS : 5.5.1                                
+                                  Librairie PETSc : non disponible                                  
+                               Version de la librairie SCOTCH : 7.0.3                               
+
+starting the execution...
+Valeur initiale du temps CPU maximum =   600 secondes
+  Valeur du temps CPU maximum passé aux
+commandes =   540 secondes
+  Réserve CPU prévue = 60 secondes
+
+Ouverture en écriture du fichier ./glob.1
+
+Ouverture en écriture du fichier ./vola.1
+
+Ouverture en lecture du fichier
+C:\Users\pedro.lauer\AppData\Local\code_aster\v2024\16.7\lib\aster/elem.1
+
+Nom de la base                          :  ELEMBASE
+     Créée avec la version                   : 
+16.07.09
+     Nombre d'enregistrements utilisés       :  45
+     Nombre d'enregistrements maximum   
+    :  512
+     Nombre d'enregistrements par fichier    :  512
+     Longueur d'enregistrement
+(octets)      :  819200
+     Nombre d'identificateurs utilisés       :  123
+     Taille maximum du
+répertoire            :  300
+     Pourcentage d'utilisation du répertoire :  41 %
+
+Ouverture en lecture du fichier
+C:\Users\pedro.lauer\AppData\Local\code_aster\v2024\16.7\lib\aster/elem.1
+
+Nom de la base                          :  ELEMBASE
+     Nombre d'enregistrements utilisés       : 
+45
+     Nombre d'enregistrements maximum        :  512
+     Nombre d'enregistrements par fichier   
+:  512
+     Longueur d'enregistrement (octets)      :  819200
+     Nombre total d'accès en lecture  
+      :  63
+     Volume des accès en lecture             :         49.22 Mo.
+     Nombre total
+d'accès en écriture        :  0
+     Volume des accès en écriture            :          0.00 Mo.
+   
+ Nombre d'identificateurs utilisés       :  123
+     Taille maximum du répertoire            :  300
+
+    Pourcentage d'utilisation du répertoire :  41 %
+
+Relecture des catalogues des éléments faite.
+
+Fin de lecture (durée  0.000000  s.) 
+
+                      Mémoire limite pour l'allocation dynamique : 1536.00 Mo                       
+                              ajouté à l'initialisation du processus :                              
+                                             273.20 Mo                                              
+                               Limite cible du processus : 1809.20 Mo                               
+                         Taille limite des fichiers d'échange : 2048.00 Go                          
+# Mémoire (Mo) :   273.20 /   265.76 /   208.39 /   184.66 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0001   user+syst:        0.08s (syst:        0.06s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt11
+# ----------------------------------------------------------------------------------------------
+# Commande #0002 de fort.1, ligne 11
+mesh = LIRE_MAILLAGE(FORMAT='MED',
+                     INFO=1,
+                     INFO_MED=0,
+                     PARTITIONNEUR='SANS',
+                     UNITE=20,
+                     VERI_MAIL=_F(APLAT=0.001,
+                                  VERIF='OUI'))
+
+Nom MED du maillage : 590000418066
+
+
+------------ MAILLAGE 00000001 - IMPRESSIONS NIVEAU  1 ------------
+
+
+NOMBRE DE NOEUDS                          42
+
+NOMBRE DE MAILLES                         48
+                              POI1                    8
+                              SEG2                   40
+
+NOMBRE DE GROUPES DE MAILLES               6
+
+--------------------------------------------------------------------------------
+
+Vérification du maillage.
+
+
+ ╔════════════════════════════════════════════════════════════════════════════════════════════════╗
+ ║ <A> <MODELISA8_14>                                                                             ║
+ ║                                                                                                ║
+ ║ La maille POI1 M1 est incluse dans une autre.                                                  ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des                                                                ║
+ ║ résultats inattendus !                                                                         ║
+ ╚════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+
+ ╔════════════════════════════════════════════════════════════════════════════════════════════════╗
+ ║ <A> <MODELISA8_14>                                                                             ║
+ ║                                                                                                ║
+ ║ La maille POI1 M2 est incluse dans une autre.                                                  ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des                                                                ║
+ ║ résultats inattendus !                                                                         ║
+ ╚════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+
+ ╔════════════════════════════════════════════════════════════════════════════════════════════════╗
+ ║ <A> <MODELISA8_14>                                                                             ║
+ ║                                                                                                ║
+ ║ La maille POI1 M3 est incluse dans une autre.                                                  ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des                                                                ║
+ ║ résultats inattendus !                                                                         ║
+ ╚════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+
+ ╔════════════════════════════════════════════════════════════════════════════════════════════════╗
+ ║ <A> <MODELISA8_14>                                                                             ║
+ ║                                                                                                ║
+ ║ La maille POI1 M4 est incluse dans une autre.                                                  ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des                                                                ║
+ ║ résultats inattendus !                                                                         ║
+ ╚════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+
+ ╔════════════════════════════════════════════════════════════════════════════════════════════════╗
+ ║ <A> <MODELISA8_14>                                                                             ║
+ ║                                                                                                ║
+ ║ La maille POI1 M5 est incluse dans une autre.                                                  ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des                                                                ║
+ ║ résultats inattendus !                                                                         ║
+ ╚════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+
+ ╔════════════════════════════════════════════════════════════════════════════════════════════════╗
+ ║ <A> <CATAMESS_41>                                                                              ║
+ ║                                                                                                ║
+ ║ Le message d'alarme 'MODELISA8_14' a été émis 5 fois, il ne sera plus affiché.                 ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des                                                                ║
+ ║ résultats inattendus !                                                                         ║
+ ╚════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+# Résultat commande #0002 (LIRE_MAILLAGE): mesh ('<00000001>') de type <Mesh>
+# Mémoire (Mo) :   282.13 /   282.13 /   208.39 /   184.66 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0002   user+syst:        0.03s (syst:        0.03s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt16
+# ----------------------------------------------------------------------------------------------
+# Commande #0003 de fort.1, ligne 16
+mesh = DEFI_GROUP(ALARME='OUI',
+                  CREA_GROUP_MA=_F(NOM='TOUT',
+                                   TOUT='OUI',
+                                   TYPE_MAILLE='TOUT'),
+                  CREA_GROUP_NO=_F(TOUT_GROUP_MA='OUI'),
+                  MAILLAGE=mesh,
+                  reuse=mesh)
+
+La mémoire consommée actuellement hors JEVEUX est de 66.25 Mo.
+La mémoire limite pour l'allocation
+dynamique est fixée à 282.15 Mo (+206.95 Mo).
+Cette valeur limite a été réactualisée entre les
+appels aux différentes commandes.
+
+
+
+NOMBRE  DE GROUPES DE MAILLES CREES :      1
+=============================================
+
+               ------------------------------------------------------
+               !         NOM DU GROUPE         ! NBRE DE MAILLES DU !
+               !            MAILLES            !     GROUPE_MA      !
+               ------------------------------------------------------
+               !  TOUT                         !        48          !
+               ------------------------------------------------------
+
+
+
+NOMBRE  DE GROUPES DE NOEUDS CREES :      7
+=======================================
+
+               ------------------------------------------------------
+               !         NOM DU GROUPE         ! NBRE DE NOEUDS DU  !
+               !            NOEUDS             !      GROUPE_NO     !
+               ------------------------------------------------------
+               !  groundN                      !         1          !
+               !  groundS                      !         1          !
+               !  loadS                        !         1          !
+               !  massN                        !         1          !
+               !  mast                         !        11          !
+               !  topbeam                      !        22          !
+               !  TOUT                         !        42          !
+               ------------------------------------------------------
+
+# Résultat commande #0003 (DEFI_GROUP): mesh ('<00000001>') de type <Mesh>
+# Mémoire (Mo) :   282.27 /   282.27 /   208.39 /   184.66 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0003   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt21
+# ----------------------------------------------------------------------------------------------
+# Commande #0004 de fort.1, ligne 21
+IMPR_RESU(FICHIER_UNIQUE='OUI',
+          FORMAT='MED',
+          INFO=1,
+          PROC0='OUI',
+          RESU=_F(IMPR_NOM_VARI='OUI',
+                  INFO_MAILLAGE='NON',
+                  MAILLAGE=mesh),
+          UNITE=71,
+          VERSION_MED='3.3.1')
+
+Création du fichier au format MED 3.3.1.
+
+# Mémoire (Mo) :   284.99 /   284.99 /   208.39 /   184.66 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0004   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt29
+# ----------------------------------------------------------------------------------------------
+# Commande #0005 de fort.1, ligne 29
+modele = AFFE_MODELE(AFFE=(_F(GROUP_MA=('topbeam', 'mast'),
+                              MODELISATION='POU_D_T',
+                              PHENOMENE='MECANIQUE'),
+                           _F(GROUP_MA='massN',
+                              MODELISATION='DIS_T',
+                              PHENOMENE='MECANIQUE')),
+                     DISTRIBUTION=_F(METHODE='SOUS_DOMAINE',
+                                     PARTITIONNEUR='METIS'),
+                     INFO=1,
+                     MAILLAGE=mesh,
+                     VERI_JACOBIEN='OUI',
+                     VERI_NORM_IFS='OUI')
+
+Sur les 48 mailles du maillage 00000001, on a demandé l'affectation de 31, on a pu en affecter 31.
+Modélisation     Formulation      Type maille  Élément fini     Nombre
+DIS_T            _                POI1         MECA_DIS_T_N     1
+POU_D_T          _                SEG2         MECA_POU_D_T     30
+#2      Calculs elementaires et assemblages               CPU (USER+SYST/SYST/ELAPS):      0.00      0.00      0.00
+# Résultat commande #0005 (AFFE_MODELE): modele ('<00000002>') de type <Model>
+# Mémoire (Mo) :   286.30 /   286.30 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0005   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt32
+# ----------------------------------------------------------------------------------------------
+# Commande #0006 de fort.1, ligne 32
+steel = DEFI_MATERIAU(ELAS=_F(B_ENDOGE=0.0,
+                              COEF_AMOR=1.0,
+                              E=210000.0,
+                              K_DESSIC=0.0,
+                              NU=0.3,
+                              RHO=8e-09),
+                      INFO=1)
+
+# Résultat commande #0006 (DEFI_MATERIAU): steel ('<00000003>') de type <Material>
+# Mémoire (Mo) :   286.38 /   286.38 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0006   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt34
+# ----------------------------------------------------------------------------------------------
+# Commande #0007 de fort.1, ligne 34
+material = AFFE_MATERIAU(AFFE=_F(GROUP_MA=('topbeam', 'mast'),
+                                 MATER=steel),
+                         INFO=1,
+                         MAILLAGE=mesh)
+
+# Résultat commande #0007 (AFFE_MATERIAU): material ('<00000004>') de type <MaterialField>
+# Mémoire (Mo) :   286.57 /   286.57 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0007   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt53
+# ----------------------------------------------------------------------------------------------
+# Commande #0008 de fort.1, ligne 53
+elemcar = AFFE_CARA_ELEM(DISCRET=_F(CARA='K_T_D_N',
+                                    GROUP_MA='massN',
+                                    REPERE='GLOBAL',
+                                    SYME='OUI',
+                                    VALE=(0, 0, 0)),
+                         INFO=1,
+                         MODELE=modele,
+                         POUTRE=(_F(CARA=('HY', 'HZ', 'EPY', 'EPZ'),
+                                    GROUP_MA='topbeam',
+                                    SECTION='RECTANGLE',
+                                    VALE=(40, 20, 1.5, 1.5),
+                                    VARI_SECT='CONSTANT'),
+                                 _F(CARA=('HY', 'HZ', 'EPY', 'EPZ'),
+                                    GROUP_MA='mast',
+                                    SECTION='RECTANGLE',
+                                    VALE=(40, 20, 1.5, 1.5),
+                                    VARI_SECT='CONSTANT')))
+
+
+     LE MODELE 00000002 CONTIENT : 
+                                       30 ELEMENT(S) POUTRE          
+                                        1 ELEMENT(S) DISCRET         
+#2      Calculs elementaires et assemblages               CPU (USER+SYST/SYST/ELAPS):      0.00      0.00      0.00
+# Résultat commande #0008 (AFFE_CARA_ELEM): elemcar ('<00000005>') de type
+<ElementaryCharacteristics>
+# Dépend de :
+# - modele ('<00000002>') de type <Model>
+# Mémoire (Mo) :   287.07 /   287.07 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0008   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt59
+# ----------------------------------------------------------------------------------------------
+# Commande #0009 de fort.1, ligne 59
+ground = AFFE_CHAR_MECA(DDL_IMPO=_F(DRX=0,
+                                    DRY=0,
+                                    DRZ=0,
+                                    DX=0,
+                                    DY=0,
+                                    DZ=0,
+                                    GROUP_MA=('groundS', 'groundN')),
+                        DOUBLE_LAGRANGE='OUI',
+                        INFO=1,
+                        MODELE=modele,
+                        VERI_AFFE='OUI',
+                        VERI_NORM='OUI')
+
+# Résultat commande #0009 (AFFE_CHAR_MECA): ground ('<00000006>') de type <MechanicalLoadReal>
+# Mémoire (Mo) :   287.41 /   287.41 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0009   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt66
+# ----------------------------------------------------------------------------------------------
+# Commande #0010 de fort.1, ligne 66
+selfwght = AFFE_CHAR_MECA(DOUBLE_LAGRANGE='OUI',
+                          INFO=1,
+                          MODELE=modele,
+                          PESANTEUR=_F(DIRECTION=(0, 0, -1),
+                                       GRAVITE=10000,
+                                       GROUP_MA=('topbeam', 'mast', 'massN')),
+                          VERI_AFFE='OUI',
+                          VERI_NORM='OUI')
+
+# Résultat commande #0010 (AFFE_CHAR_MECA): selfwght ('<00000007>') de type <MechanicalLoadReal>
+# Mémoire (Mo) :   287.42 /   287.42 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0010   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt73
+# ----------------------------------------------------------------------------------------------
+# Commande #0011 de fort.1, ligne 73
+cc = AFFE_CHAR_MECA(DOUBLE_LAGRANGE='OUI',
+                    FORCE_NODALE=_F(FZ=-135,
+                                    GROUP_NO='loadS'),
+                    INFO=1,
+                    MODELE=modele,
+                    VERI_AFFE='OUI',
+                    VERI_NORM='OUI')
+
+# Résultat commande #0011 (AFFE_CHAR_MECA): cc ('<00000008>') de type <MechanicalLoadReal>
+# Mémoire (Mo) :   287.42 /   287.42 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0011   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt79
+# ----------------------------------------------------------------------------------------------
+# Commande #0012 de fort.1, ligne 79
+selfw_m = DEFI_FONCTION(INFO=1,
+                        INTERPOL='LIN',
+                        NOM_PARA='INST',
+                        NOM_RESU='TOUTRESU',
+                        PROL_DROITE='CONSTANT',
+                        PROL_GAUCHE='CONSTANT',
+                        VALE=(2, 0, 3, 1.35, 5, 1.35, 6, 0),
+                        VERIF='CROISSANT')
+
+# Résultat commande #0012 (DEFI_FONCTION): selfw_m ('<00000009>') de type <Function>
+# Mémoire (Mo) :   287.46 /   287.46 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0012   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt86
+# ----------------------------------------------------------------------------------------------
+# Commande #0013 de fort.1, ligne 86
+cc_m = DEFI_FONCTION(INFO=1,
+                     INTERPOL='LIN',
+                     NOM_PARA='INST',
+                     NOM_RESU='TOUTRESU',
+                     PROL_DROITE='CONSTANT',
+                     PROL_GAUCHE='CONSTANT',
+                     VALE=(3, 0, 4, 1, 5, 1, 6, 0),
+                     VERIF='CROISSANT')
+
+# Résultat commande #0013 (DEFI_FONCTION): cc_m ('<0000000a>') de type <Function>
+# Mémoire (Mo) :   287.48 /   287.48 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0013   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt93
+# ----------------------------------------------------------------------------------------------
+# Commande #0014 de fort.1, ligne 93
+cr_m = DEFI_FONCTION(INFO=1,
+                     INTERPOL='LIN',
+                     NOM_PARA='INST',
+                     NOM_RESU='TOUTRESU',
+                     PROL_DROITE='CONSTANT',
+                     PROL_GAUCHE='CONSTANT',
+                     VALE=(4, 0, 5, 1.5, 6, 1),
+                     VERIF='CROISSANT')
+
+# Résultat commande #0014 (DEFI_FONCTION): cr_m ('<0000000b>') de type <Function>
+# Mémoire (Mo) :   287.48 /   287.48 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0014   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt95
+# ----------------------------------------------------------------------------------------------
+# Commande #0015 de fort.1, ligne 95
+liste = DEFI_LIST_REEL(DEBUT=2.0,
+                       INFO=1,
+                       INTERVALLE=_F(JUSQU_A=6,
+                                     PAS=1.0))
+
+# Résultat commande #0015 (DEFI_LIST_REEL): liste ('<0000000c>') de type <ListOfFloats>
+# Mémoire (Mo) :   287.52 /   287.52 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0015   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+  
+ <I> <FIN> MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :                     196.86 Mo
+ <I> <FIN> MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :                     208.39 Mo
+ <I> <FIN> MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS LORS DE L'EXECUTION :     287.64 Mo
+  
+ <I>       FERMETURE DES BASES EFFECTUEE
+  
+   STATISTIQUES CONCERNANT L'ALLOCATION DYNAMIQUE :
+     TAILLE CUMULEE MAXIMUM            :                  208  Mo.
+     TAILLE CUMULEE LIBEREE            :                    2  Mo.
+     NOMBRE TOTAL D'ALLOCATIONS        :                 6602
+     NOMBRE TOTAL DE LIBERATIONS       :                 6434
+     APPELS AU MECANISME DE LIBERATION :                    0
+     TAILLE MEMOIRE CUMULEE RECUPEREE  :                    0  Mo.
+     VOLUME DES LECTURES               :                    0  Mo.
+     VOLUME DES ECRITURES              :                    0  Mo.
+  
+   MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :     196.86 Mo
+     - IMPOSE DE NOMBREUX ACCES DISQUE
+     - RALENTIT LA VITESSE D'EXECUTION
+   MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :     208.39 Mo
+     - LIMITE LES ACCES DISQUE
+     - AMELIORE LA VITESSE D'EXECUTION
+   MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS     :     287.64 Mo
+     - COMPREND LA MEMOIRE CONSOMMEE PAR  JEVEUX, 
+       LE SUPERVISEUR PYTHON, LES LIBRAIRIES EXTERNES
+  
+ <I>       FIN D'EXECUTION LE : JE-23-AVRI-2026 13:12:48
+EXECUTION_CODE_ASTER_EXIT_9560=0
