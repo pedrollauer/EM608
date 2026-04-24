@@ -13,7 +13,7 @@ Ouverture en écriture du fichier ./vola.1
                            révision 5029d61da970 - branche 'windows-v16'                            
                                    Copyright EDF R&D 1991 - 2026                                    
                                                                                                     
-                              Exécution du : Thu Apr 23 13:12:47 2026                               
+                              Exécution du : Fri Apr 24 09:35:10 2026                               
                                         Nom de la machine :                                         
                                               BR-LAUER                                              
                                         Architecture : 64bit                                        
@@ -88,11 +88,11 @@ Fin de lecture (durée  0.000000  s.)
 
                       Mémoire limite pour l'allocation dynamique : 1536.00 Mo                       
                               ajouté à l'initialisation du processus :                              
-                                             273.20 Mo                                              
-                               Limite cible du processus : 1809.20 Mo                               
+                                             273.11 Mo                                              
+                               Limite cible du processus : 1809.11 Mo                               
                          Taille limite des fichiers d'échange : 2048.00 Go                          
-# Mémoire (Mo) :   273.20 /   265.76 /   208.39 /   184.66 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0001   user+syst:        0.08s (syst:        0.06s, elaps:        0.00s)
+# Mémoire (Mo) :   273.11 /   265.67 /   208.39 /   184.66 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0001   user+syst:        0.06s (syst:        0.08s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt11
@@ -197,8 +197,8 @@ Vérification du maillage.
  ╚════════════════════════════════════════════════════════════════════════════════════════════════╝
 
 # Résultat commande #0002 (LIRE_MAILLAGE): mesh ('<00000001>') de type <Mesh>
-# Mémoire (Mo) :   282.13 /   282.13 /   208.39 /   184.66 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0002   user+syst:        0.03s (syst:        0.03s, elaps:        0.00s)
+# Mémoire (Mo) :   282.06 /   282.06 /   208.39 /   184.66 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0002   user+syst:        0.02s (syst:        0.05s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt16
@@ -212,9 +212,9 @@ mesh = DEFI_GROUP(ALARME='OUI',
                   MAILLAGE=mesh,
                   reuse=mesh)
 
-La mémoire consommée actuellement hors JEVEUX est de 66.25 Mo.
+La mémoire consommée actuellement hors JEVEUX est de 66.18 Mo.
 La mémoire limite pour l'allocation
-dynamique est fixée à 282.15 Mo (+206.95 Mo).
+dynamique est fixée à 282.08 Mo (+206.94 Mo).
 Cette valeur limite a été réactualisée entre les
 appels aux différentes commandes.
 
@@ -249,8 +249,8 @@ NOMBRE  DE GROUPES DE NOEUDS CREES :      7
                ------------------------------------------------------
 
 # Résultat commande #0003 (DEFI_GROUP): mesh ('<00000001>') de type <Mesh>
-# Mémoire (Mo) :   282.27 /   282.27 /   208.39 /   184.66 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0003   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   282.20 /   282.20 /   208.39 /   184.66 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0003   user+syst:        0.00s (syst:        0.02s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt21
@@ -268,8 +268,8 @@ IMPR_RESU(FICHIER_UNIQUE='OUI',
 
 Création du fichier au format MED 3.3.1.
 
-# Mémoire (Mo) :   284.99 /   284.99 /   208.39 /   184.66 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0004   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   284.93 /   284.93 /   208.39 /   184.66 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0004   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt29
@@ -294,7 +294,7 @@ DIS_T            _                POI1         MECA_DIS_T_N     1
 POU_D_T          _                SEG2         MECA_POU_D_T     30
 #2      Calculs elementaires et assemblages               CPU (USER+SYST/SYST/ELAPS):      0.00      0.00      0.00
 # Résultat commande #0005 (AFFE_MODELE): modele ('<00000002>') de type <Model>
-# Mémoire (Mo) :   286.30 /   286.30 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   286.25 /   286.25 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0005   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
@@ -310,7 +310,7 @@ steel = DEFI_MATERIAU(ELAS=_F(B_ENDOGE=0.0,
                       INFO=1)
 
 # Résultat commande #0006 (DEFI_MATERIAU): steel ('<00000003>') de type <Material>
-# Mémoire (Mo) :   286.38 /   286.38 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   286.31 /   286.31 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0006   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
@@ -323,8 +323,8 @@ material = AFFE_MATERIAU(AFFE=_F(GROUP_MA=('topbeam', 'mast'),
                          MAILLAGE=mesh)
 
 # Résultat commande #0007 (AFFE_MATERIAU): material ('<00000004>') de type <MaterialField>
-# Mémoire (Mo) :   286.57 /   286.57 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0007   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   286.50 /   286.50 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0007   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt53
@@ -357,7 +357,7 @@ elemcar = AFFE_CARA_ELEM(DISCRET=_F(CARA='K_T_D_N',
 <ElementaryCharacteristics>
 # Dépend de :
 # - modele ('<00000002>') de type <Model>
-# Mémoire (Mo) :   287.07 /   287.07 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   287.00 /   287.00 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0008   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
@@ -370,7 +370,7 @@ ground = AFFE_CHAR_MECA(DDL_IMPO=_F(DRX=0,
                                     DX=0,
                                     DY=0,
                                     DZ=0,
-                                    GROUP_MA=('groundS', 'groundN')),
+                                    GROUP_NO=('groundS', 'groundN')),
                         DOUBLE_LAGRANGE='OUI',
                         INFO=1,
                         MODELE=modele,
@@ -378,8 +378,8 @@ ground = AFFE_CHAR_MECA(DDL_IMPO=_F(DRX=0,
                         VERI_NORM='OUI')
 
 # Résultat commande #0009 (AFFE_CHAR_MECA): ground ('<00000006>') de type <MechanicalLoadReal>
-# Mémoire (Mo) :   287.41 /   287.41 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0009   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   287.34 /   287.34 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0009   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt66
@@ -395,13 +395,29 @@ selfwght = AFFE_CHAR_MECA(DOUBLE_LAGRANGE='OUI',
                           VERI_NORM='OUI')
 
 # Résultat commande #0010 (AFFE_CHAR_MECA): selfwght ('<00000007>') de type <MechanicalLoadReal>
-# Mémoire (Mo) :   287.42 /   287.42 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   287.35 /   287.35 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0010   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
-.. _stg1_txt73
+.. _stg1_txt69
 # ----------------------------------------------------------------------------------------------
-# Commande #0011 de fort.1, ligne 73
+# Commande #0011 de fort.1, ligne 69
+cr = AFFE_CHAR_MECA(DOUBLE_LAGRANGE='OUI',
+                    FORCE_NODALE=_F(FZ=-11.764705882352942,
+                                    GROUP_NO='topbeam'),
+                    INFO=1,
+                    MODELE=modele,
+                    VERI_AFFE='OUI',
+                    VERI_NORM='OUI')
+
+# Résultat commande #0011 (AFFE_CHAR_MECA): cr ('<00000008>') de type <MechanicalLoadReal>
+# Mémoire (Mo) :   287.35 /   287.35 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0011   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt74
+# ----------------------------------------------------------------------------------------------
+# Commande #0012 de fort.1, ligne 74
 cc = AFFE_CHAR_MECA(DOUBLE_LAGRANGE='OUI',
                     FORCE_NODALE=_F(FZ=-135,
                                     GROUP_NO='loadS'),
@@ -410,14 +426,14 @@ cc = AFFE_CHAR_MECA(DOUBLE_LAGRANGE='OUI',
                     VERI_AFFE='OUI',
                     VERI_NORM='OUI')
 
-# Résultat commande #0011 (AFFE_CHAR_MECA): cc ('<00000008>') de type <MechanicalLoadReal>
-# Mémoire (Mo) :   287.42 /   287.42 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0011   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
+# Résultat commande #0012 (AFFE_CHAR_MECA): cc ('<00000009>') de type <MechanicalLoadReal>
+# Mémoire (Mo) :   287.35 /   287.35 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0012   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
-.. _stg1_txt79
+.. _stg1_txt80
 # ----------------------------------------------------------------------------------------------
-# Commande #0012 de fort.1, ligne 79
+# Commande #0013 de fort.1, ligne 80
 selfw_m = DEFI_FONCTION(INFO=1,
                         INTERPOL='LIN',
                         NOM_PARA='INST',
@@ -427,14 +443,14 @@ selfw_m = DEFI_FONCTION(INFO=1,
                         VALE=(2, 0, 3, 1.35, 5, 1.35, 6, 0),
                         VERIF='CROISSANT')
 
-# Résultat commande #0012 (DEFI_FONCTION): selfw_m ('<00000009>') de type <Function>
-# Mémoire (Mo) :   287.46 /   287.46 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0012   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# Résultat commande #0013 (DEFI_FONCTION): selfw_m ('<0000000a>') de type <Function>
+# Mémoire (Mo) :   287.39 /   287.39 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0013   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
-.. _stg1_txt86
+.. _stg1_txt87
 # ----------------------------------------------------------------------------------------------
-# Commande #0013 de fort.1, ligne 86
+# Commande #0014 de fort.1, ligne 87
 cc_m = DEFI_FONCTION(INFO=1,
                      INTERPOL='LIN',
                      NOM_PARA='INST',
@@ -444,14 +460,14 @@ cc_m = DEFI_FONCTION(INFO=1,
                      VALE=(3, 0, 4, 1, 5, 1, 6, 0),
                      VERIF='CROISSANT')
 
-# Résultat commande #0013 (DEFI_FONCTION): cc_m ('<0000000a>') de type <Function>
-# Mémoire (Mo) :   287.48 /   287.48 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0013   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# Résultat commande #0014 (DEFI_FONCTION): cc_m ('<0000000b>') de type <Function>
+# Mémoire (Mo) :   287.41 /   287.41 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0014   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
-.. _stg1_txt93
+.. _stg1_txt94
 # ----------------------------------------------------------------------------------------------
-# Commande #0014 de fort.1, ligne 93
+# Commande #0015 de fort.1, ligne 94
 cr_m = DEFI_FONCTION(INFO=1,
                      INTERPOL='LIN',
                      NOM_PARA='INST',
@@ -461,49 +477,285 @@ cr_m = DEFI_FONCTION(INFO=1,
                      VALE=(4, 0, 5, 1.5, 6, 1),
                      VERIF='CROISSANT')
 
-# Résultat commande #0014 (DEFI_FONCTION): cr_m ('<0000000b>') de type <Function>
-# Mémoire (Mo) :   287.48 /   287.48 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0014   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
+# Résultat commande #0015 (DEFI_FONCTION): cr_m ('<0000000c>') de type <Function>
+# Mémoire (Mo) :   287.41 /   287.41 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0015   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
-.. _stg1_txt95
+.. _stg1_txt96
 # ----------------------------------------------------------------------------------------------
-# Commande #0015 de fort.1, ligne 95
+# Commande #0016 de fort.1, ligne 96
 liste = DEFI_LIST_REEL(DEBUT=2.0,
                        INFO=1,
                        INTERVALLE=_F(JUSQU_A=6,
                                      PAS=1.0))
 
-# Résultat commande #0015 (DEFI_LIST_REEL): liste ('<0000000c>') de type <ListOfFloats>
-# Mémoire (Mo) :   287.52 /   287.52 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0015   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# Résultat commande #0016 (DEFI_LIST_REEL): liste ('<0000000d>') de type <ListOfFloats>
+# Mémoire (Mo) :   287.45 /   287.45 /   208.39 /   196.86 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0016   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt109
+# ----------------------------------------------------------------------------------------------
+# Commande #0017 de fort.1, ligne 109
+stat = MECA_STATIQUE(CARA_ELEM=elemcar,
+                     CHAM_MATER=material,
+                     EXCIT=(_F(CHARGE=ground,
+                               TYPE_CHARGE='FIXE_CSTE'),
+                            _F(CHARGE=selfwght,
+                               FONC_MULT=selfw_m,
+                               TYPE_CHARGE='FIXE_CSTE'),
+                            _F(CHARGE=cc,
+                               FONC_MULT=cc_m,
+                               TYPE_CHARGE='FIXE_CSTE'),
+                            _F(CHARGE=cr,
+                               FONC_MULT=cr_m,
+                               TYPE_CHARGE='FIXE_CSTE')),
+                     INFO=1,
+                     LIST_INST=liste,
+                     MODELE=modele,
+                     OPTION='SIEF_ELGA',
+                     SOLVEUR=_F(ACCELERATION='AUTO',
+                                ELIM_LAGR='LAGR2',
+                                GESTION_MEMOIRE='AUTO',
+                                LOW_RANK_SEUIL=0.0,
+                                MATR_DISTRIBUEE='NON',
+                                METHODE='MUMPS',
+                                NB_RHS=1,
+                                NPREC=8,
+                                PCENT_PIVOT=35,
+                                POSTTRAITEMENTS='AUTO',
+                                PRETRAITEMENTS='AUTO',
+                                REDUCTION_MPI=0,
+                                RENUM='AUTO',
+                                RESI_RELA=1e-06,
+                                STOP_SINGULIER='OUI',
+                                TYPE_RESOL='AUTO'),
+                     TITRE='mon etude')
+
+Le système linéaire à résoudre a 204 degrés de liberté:
+   - 192 sont des degrés de liberté
+physiques
+     (ils sont portés par 32 noeuds du maillage)
+   - 12 sont les couples de paramètres de
+Lagrange associés
+     aux 6 relations linéaires dualisées.
+La matrice est de taille 204 équations.
+  Elle contient 1842 termes non nuls si elle est symétrique
+et 3480 termes non nuls si elle n'est pas symétrique.
+  Soit un taux de remplissage de   8.362 %.
+Degré de liberté physique associé au noeud N2 et à la composante DX.
+
+
+ ╔════════════════════════════════════════════════════════════════════════════════════════════════╗
+ ║ <EXCEPTION> <FACTOR_11>                                                                        ║
+ ║                                                                                                ║
+ ║ Problème : la matrice est singulière ou presque singulière :                                   ║
+ ║   Lors de la factorisation de la                                                               ║
+ ║ matrice, on a rencontré un problème                                                            ║
+ ║   (pivot nul ou presque nul) à la ligne 1 qui correspond                                       ║
+ ║ au degré de liberté donné ci-dessus.                                                           ║
+ ║                                                                                                ║
+ ║ Risques et conseils :                                                                          ║
+ ║    * Si la ligne correspond a un                                                               ║
+ ║ degré de liberté physique, il s'agit probablement d'un mouvement                               ║
+ ║      de corps rigide mal                                                                       ║
+ ║ bloqué.                                                                                        ║
+ ║      Vérifiez les conditions aux limites.                                                      ║
+ ║      Si vous faites du contact, il ne faut                                                     ║
+ ║ pas que la structure ne "tienne" que par le contact.                                           ║
+ ║      Vérifiez également les                                                                    ║
+ ║ caractéristiques matériaux (module d'Young, ...).                                              ║
+ ║                                                                                                ║
+ ║    * Si la ligne correspond a un degré de                                                      ║
+ ║ liberté de Lagrange, il s'agit sans doute d'une condition                                      ║
+ ║      limite redondante.                                                                        ║
+ ║      En                                                                                        ║
+ ║ particulier, il se peut que la relation linéaire surabondante provienne des conditions de      ║
+ ║ contact.                                                                                       ║
+ ║      Peut-être devriez vous exclure certains noeuds des conditions de contact                  ║
+ ║                                                                                                ║
+ ║ (mots clés SANS_NOEUD et SANS_GROUP_NO).                                                       ║
+ ║                                                                                                ║
+ ║    * Si le solveur utilisé est LDLT ou MULT_FRONT,                                             ║
+ ║ vous pouvez utiliser le solveur MUMPS                                                          ║
+ ║      car celui-ci est le seul à pouvoir factoriser les                                         ║
+ ║ matrices qui ne sont pas définies positives.                                                   ║
+ ║                                                                                                ║
+ ║    * Parfois, en parallèle, le critère de                                                      ║
+ ║ détection de singularité de MUMPS est trop pessimiste ! Il reste néanmoins souvent             ║
+ ║                                                                                                ║
+ ║ possible de faire passer le calcul complet en relaxant ce critère (augmenter de 1 ou 2 la      ║
+ ║ valeur du mot-clé NPREC) ou                                                                    ║
+ ║      en le débranchant (valeur du mot-clé NPREC=-1) ou en                                      ║
+ ║ relançant le calcul sur moins de processeurs.                                                  ║
+ ║                                                                                                ║
+ ║    * Il se peut aussi que ce phénomène soit                                                    ║
+ ║ tout à fait normal avec X-FEM si la fissure passe                                              ║
+ ║      très près d'un noeud.                                                                     ║
+ ║      Si le nombre                                                                              ║
+ ║ de décimales perdues n'est pas trop grand (max 10 décimales),                                  ║
+ ║      vous pouvez relancer le                                                                   ║
+ ║ calcul en augmentant le nombre de décimales perdues autorisé :                                 ║
+ ║      mot-clé NPREC du mot clé                                                                  ║
+ ║ facteur SOLVEUR.                                                                               ║
+ ║      Sinon, contactez l'équipe de développement.                                               ║
+ ║                                                                                                ║
+ ╚════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+   !-----------------------------------------------------------------!
+   !                                                                 !
+   !    FATAL ERROR detected in Code_Aster for Windows               !
+   !                                                                 !
+   !    Subscribe to the premium version if you need bug fixes       !
+   !                                                                 !
+   !                      support@simulease.com                      !
+   !                                                                 !
+   !-----------------------------------------------------------------!
+Destruction du concept '00000011' suite à l'erreur précédente.
+
+# Mémoire (Mo) :   290.93 /   290.93 /   208.39 /   197.02 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0017   user+syst:        0.03s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+Exception: Trying to close the database after an uncaught exception...
+
+
+Publishing the result of the current command MECA_STATIQUE...
+
+Saving objects...
+pi                       <class 'float'>
+e                        <class 'float'>
+tau                      <class 'float'>
+inf                      <class 'float'>
+nan                      <class 'float'>
+mesh                     <class 'libaster.Mesh'>
+modele                   <class 'libaster.Model'>
+steel                    <class 'libaster.Material'>
+material                 <class 'libaster.MaterialField'>
+elemcar                  <class 'libaster.ElementaryCharacteristics'>
+ground                   <class 'libaster.MechanicalLoadReal'>
+selfwght                 <class 'libaster.MechanicalLoadReal'>
+cr                       <class 'libaster.MechanicalLoadReal'>
+cc                       <class 'libaster.MechanicalLoadReal'>
+selfw_m                  <class 'libaster.Function'>
+cc_m                     <class 'libaster.Function'>
+cr_m                     <class 'libaster.Function'>
+liste                    <class 'libaster.ListOfFloats'>
+
+ ╔════════════════════════════════════════════════════════════════════════════════════════════════╗
+ ║ <I> <CATAMESS_89>                                                                              ║
+ ║                                                                                                ║
+ ║ Liste des alarmes émises lors de l'exécution du calcul.                                        ║
+ ║                                                                                                ║
+ ║     Les alarmes que vous avez                                                                  ║
+ ║ choisies d'ignorer sont précédées de (*).                                                      ║
+ ║     Nombre d'occurrences pour chacune des alarmes :                                            ║
+ ║                                                                                                ║
+ ║           MODELISA8_14         émise    8 fois                                                 ║
+ ╚════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+ ---------------------------------------------------------------------------
+ Concepts de la base: G
+    Nom        Type                Taille (Mo)         Nombre      Nombre de
+                                                     d'objets       segments
+    TOTAL                                30.62            415            631
   
- <I> <FIN> MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :                     196.86 Mo
+    00000001   MAILLAGE_SDASTER           0.01             36             71
+    00000002   MODELE_SDASTER             0.00              9             14
+    00000003   MATER_SDASTER              0.00             11             11
+    00000004   CHAM_MATER                 0.00              8             13
+    00000005   CARA_ELEM                  0.02             58             98
+    00000006   CHAR_MECA                  0.01             55             75
+    00000007   CHAR_MECA                  0.00             40             45
+    00000008   CHAR_MECA                  0.01             46             61
+    00000009   CHAR_MECA                  0.00             46             61
+    0000000a   FONCTION_SDASTER           0.00              3              3
+    0000000b   FONCTION_SDASTER           0.00              3              3
+    0000000c   FONCTION_SDASTER           0.00              3              3
+    0000000d   LISTR8_SDASTER             0.00              6              6
+    0000000e   EVOL_ELAS                  0.05             12             16
+    0000000f   *L_CHARGES                 0.00              4              4
+    00000010   NUME_DDL_SDASTER           0.02             15             20
+    00000012   MATR_ASSE_DEPL_R           0.03              5             11
+    0000001e   MATR_ASSE_DEPL_R           0.00              1              1
+    00000015   CHAM_NO_SDASTER            0.00              3              3
+    00000016   CHAM_NO_SDASTER            0.00              3              3
+    0000001f   *L_CHARGES                 0.00              1              1
+    &FOZERO                               0.00              2              2
+    &&_NUM_C                              0.00              1              1
+    &CATA                                30.46             42            103
+    &&NMDOME                              0.00              2              2
+ (*) sous-objets non accessible directement
+ ---------------------------------------------------------------------------
+Nom de la base                          :  GLOBALE
+     Nombre d'enregistrements utilisés       : 
+152
+     Nombre d'enregistrements maximum        :  2684354
+     Nombre d'enregistrements par
+fichier    :  15728
+     Longueur d'enregistrement (octets)      :  819200
+     Nombre total d'accès
+en lecture         :  6
+     Volume des accès en lecture             :          4.69 Mo.
+     Nombre
+total d'accès en écriture        :  374
+     Volume des accès en écriture            :        292.19
+Mo.
+     Nombre d'identificateurs utilisés       :  732
+     Taille maximum du répertoire           
+:  2000
+     Pourcentage d'utilisation du répertoire :  36 %
+
+Nom de la base                          :  VOLATILE
+     Nombre d'enregistrements utilisés       : 
+107
+     Nombre d'enregistrements maximum        :  2684354
+     Nombre d'enregistrements par
+fichier    :  15728
+     Longueur d'enregistrement (octets)      :  819200
+     Nombre total d'accès
+en lecture         :  0
+     Volume des accès en lecture             :          0.00 Mo.
+     Nombre
+total d'accès en écriture        :  291
+     Volume des accès en écriture            :        227.34
+Mo.
+     Nombre d'identificateurs utilisés       :  397
+     Taille maximum du répertoire           
+:  2000
+     Pourcentage d'utilisation du répertoire :  19 %
+
+<I> <FIN> ARRET NORMAL DANS "FIN" PAR APPEL A "JEFINI".
+  
+ <I> <FIN> MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :                     197.02 Mo
  <I> <FIN> MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :                     208.39 Mo
- <I> <FIN> MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS LORS DE L'EXECUTION :     287.64 Mo
+ <I> <FIN> MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS LORS DE L'EXECUTION :     291.11 Mo
   
  <I>       FERMETURE DES BASES EFFECTUEE
   
    STATISTIQUES CONCERNANT L'ALLOCATION DYNAMIQUE :
      TAILLE CUMULEE MAXIMUM            :                  208  Mo.
-     TAILLE CUMULEE LIBEREE            :                    2  Mo.
-     NOMBRE TOTAL D'ALLOCATIONS        :                 6602
-     NOMBRE TOTAL DE LIBERATIONS       :                 6434
+     TAILLE CUMULEE LIBEREE            :                   27  Mo.
+     NOMBRE TOTAL D'ALLOCATIONS        :                 9422
+     NOMBRE TOTAL DE LIBERATIONS       :                 9402
      APPELS AU MECANISME DE LIBERATION :                    0
      TAILLE MEMOIRE CUMULEE RECUPEREE  :                    0  Mo.
      VOLUME DES LECTURES               :                    0  Mo.
      VOLUME DES ECRITURES              :                    0  Mo.
   
-   MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :     196.86 Mo
+   MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :     197.02 Mo
      - IMPOSE DE NOMBREUX ACCES DISQUE
      - RALENTIT LA VITESSE D'EXECUTION
    MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :     208.39 Mo
      - LIMITE LES ACCES DISQUE
      - AMELIORE LA VITESSE D'EXECUTION
-   MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS     :     287.64 Mo
+   MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS     :     291.11 Mo
      - COMPREND LA MEMOIRE CONSOMMEE PAR  JEVEUX, 
        LE SUPERVISEUR PYTHON, LES LIBRAIRIES EXTERNES
   
- <I>       FIN D'EXECUTION LE : JE-23-AVRI-2026 13:12:48
-EXECUTION_CODE_ASTER_EXIT_9560=0
+ <I>       FIN D'EXECUTION LE : VE-24-AVRI-2026 09:35:11
+Signature of pickled file   : 964726994d1fbc404afa53e0ef97e3a36d8026c20ffb180c28b63408f773290c
+Signature of info file      : 760af91ac1d676007890d0fe0eb20e927d2cfa392d5ae2ed27defd13554672c5
+Signature of Jeveux database: eea02150e9302672ad3d9f2c64811d97cc4feb88920e6cbed2d1d8687f9444e4
+EXECUTION_CODE_ASTER_EXIT_7628=0
