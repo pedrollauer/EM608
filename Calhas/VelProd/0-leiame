@@ -1,0 +1,34 @@
+=== OBJETIVOS ===
+
+Construção de um modelo analítico da calha vibratória.
+
+=== HISTÓRICO ===
+
+ O projeto de mola helicoidal foi usado como base para construção do modelo de mola de fibra de vidro.
+ O programa 3 calcula o módulo de rigidez da mola com base nos resultados experimentais, e foi usado como base para o programa 5 que calcula analiticamente a rigidez da mola em função da espessura da mola, e compara o valor encontrado com o valor experimental.
+
+ O próximo passo será adequar o modelo anaítico em balanço com os valores experimentais.
+
+
+=== Valores Importantes ===
+
+E_mola = 23546074357.06
+
+=== ARQUIVOS ===
+1 - mola
+Projeto de uma mola de compressão para o SDR.
+
+2 - mola_balanco.py
+Resolução do modelo de corpo rígido para a mola da calha em balanço.
+
+3 - mv.py
+Derivação da rigidez de uma mola de vidro.
+
+4 - opt.py
+Solução de um problema de otimização pelo scipy
+
+5 - calha1.py
+Derivação da constante de mola em função da espessura.
+
+6 - mola_em_balanco_m2.py
+Modelo considerando a mola como uma carga com a derivada da deflexao

@@ -1,0 +1,63 @@
+=== OBJETIVOS ===
+
+Determinação da velocidade do produto com base nos dados do acelerômetro.
+
+=== HISTÓRICO ===
+
+A dinâmica do produto sob uma aceleração x,y da base pode cair em uma de 3 classes.
+[1] O produto pula e conserva momento.
+[2] O produto desliza.
+[3] O produto pula e desliza.
+
+O caso 2 é aparentemente o mais provável.
+Os 2 primeiros casos foram modelados com sucesso, a velocidade do produto foi calculada.
+O arquivo vel_prod.py implementa os dois casos nas funções vel_prod() e vel_atr() com os casos 1 e 2.
+
+O procedimento básico de calculo de [1] é a determinação do tempo de desprendimento, quando ay < -9.8, e a
+subsequente velocidade de curso do produto em queda livra.
+
+O procedimento básico de [2] é o calculo do tempo de deslizamento.
+
+=== Resultados ===
+
+1 - A variação de direção da velocidade depende da diferença de fase entre ax e ay, que depende a deflexão.
+2 - A velocidade do produto depende das amplitudes Ax e Ay, a relação entre elas e a distância da gravidade.
+
+=== Pendências ===
+
+O caso 3 não foi estudado.
+Sabemos apenas que o produto desliza da calha antes de voar.
+Porém isso se dá nos exemplos menos de 1 milisegundo antes.
+=== ARQUIVOS ===
+
+1 - Os seguintes arquivos são para teste. Os iniciados com b são calhas boas, em que o produto anda para frente.
+    Os iniciados com r_ são calhas que andam para trás.
+    b_1.txt
+    b_2.txt
+    b_3.txt
+    r_1.txt
+    r_2.txt
+    r_3.txt
+
+2 - Implementação das funções de cálculo de velocidade.
+    vel_prod.py
+
+3 - Implementação do programa que lê o ".txt" e calcula a velocidade.
+    sinal.py
+
+4 - Implementação do programa que lê o ".txt" e calcula a velocidade.
+    sinal.py
+
+5 - Implementação das funções de cálculo de velocidade.[Implementação inicial com vários erros]
+    vel_prod_v1.py
+
+6 - Calculo massa mola transiente.
+    spring_mass_permanent.
+
+7 - Calculo massa mola permanente.
+    spring_mass_permanent.
+
+8 - Teste simples com o chronopy
+    sim.py
+
+9 - Implementação das funções de cálculo de velocidade.[Implementação inicial com vários erros]
