@@ -159,7 +159,7 @@ def vel_prod(A,B,f, a, b):
         td += (2 * m.pi) / w
 
     vel_atr(A,B,f,a,b)
-    v0 = B*m.sin(w*td + b)/w +  B*m.sin(b)/w 
+    v0 = B*m.sin(w*td + b)/w -  B*m.sin(b)/w 
     tv = tempo_voo(td, w, B, g, b) # Tempo de vôo por métodos numéricos;
 
     sx_tv = -A*m.cos(w*(tv+td)+a)/(w**2) + A*m.cos(a)/(w**2)
