@@ -1,15 +1,11 @@
 import numpy as np
 from scipy.fft import fft, fftfreq
-import vel_prod as vp
+from scipy.signal import correlate, correlation_lags
+from scipy.interpolate import CubicSpline
+import vel_atr as va
 import math as m
 import matplotlib.pyplot as plt
 
-import numpy as np
-import matplotlib.pyplot as plt
-
-import numpy as np
-from scipy.signal import correlate, correlation_lags
-from scipy.interpolate import CubicSpline
 
 
 def plot_integral(A, B, a, b, f_hz):
@@ -272,75 +268,62 @@ def analisar_acelerometro(arquivo):
     #Tratamento do sinal 
     #(interpolacao cubica)
     #plot_compare2(ax,t,t)
+    va.vel_atr(ax, ay, az, t)
 
-    splx = CubicSpline(t, ax)
-    sply = CubicSpline(t, ay)
-    splz = CubicSpline(t, az)
-
-    t = np.linspace(0, t[len(t)-1], len(t)*10)
-    ax = splx(t)
-    ay = sply(t)
-    az = splz(t)
-
-    plot_compare2(ax,t,t)
-
-    A = amplitude(ax, t)
-    B = amplitude(ay, t)
     
-    plot_compare(A,0,60, ax, t)
-    
-
+    va.vel_atr(ax, ay, az, t)
     #ax, ay, az = desinclinar_sinal(ax, ay, az)
-    gx = np.mean(ax)
-    gy = np.mean(ay)
-    gz = np.mean(az)
+    # g = m.sqrt(gx**2 + gy**2 + gz**2)
+    # gx = np.mean(ax)
+    # gy = np.mean(ay)
+    # gz = np.mean(az)
 
-    ax = ax - gx
-    ay = ay - gy
-    az = az - gz
+    # ax = ax - gx
+    # ay = ay - gy
+    # az = az - gz
 
-    g = m.sqrt(gx**2 + gy**2 + gz**2)
-    print("gx: ", gx)
-    print("gy: ", gy)
-    print("gz: ", gz)
-    print("g : ", g)
+    #plot_compare2(ax,t,t)
+
+    #A = amplitude(ax, t)
+    #B = amplitude(ay, t)
+    
+    #R= np.arctan2(ay, ax)
+    #plot_compare2(R,(t)*0,t)
+    
+
+
 
     #diff_fase(ax, ay, t)
-    fx = freq(ax, t)
-    fy = freq(ax, t)
-    fase = diff_fase(ax, ay, t, fx)
-    print("fx", fx)
-    print("fy", fy)
-    print("ddf", fase*fx*360)
+    # fx = freq(ax, t)
+    # fy = freq(ax, t)
+    # fase = diff_fase(ax, ay, t, fx)
+    # print("Diferenca de fase", fase*fx*360)
 
+    # print("A: ", A)
+    # print("B: ", B)
+    # angulo = m.atan2(A,B)*180/m.pi
+    # angulo = angulo
+    # print("Angulo força: ", angulo)
+    # w = 2 * np.pi * fx
+    # #
+    # # angulo = m.degrees(m.atan2(A, B))
+    # # fase = (fase_x - fase_y)*180/np.pi
+    # #
+    # print("============== VEL Prod =========================")
+    # print("Vel Prod 1.0")
+    # # shi = calculate_phase_shift(t, ax, ay)
+    # # print("phase_shift: ", shi)
+    # #
+    # A, fase_x = coss(A, ax, t,fx, 0)
+    # B, fase_y = coss(B, ay, t, fx, fase)
+    # print(f"--- Funções do Acelerômetro (Frequência: {fx:.2f} Hz) ---")
+    # print(f"w = {w:.4f} rad/s")
+    # print(f"ax = {A:.4f} * cos({w:.4f}t + {fase_x:.4f})")
+    # print(f"ay = {B:.4f} * cos({w:.4f}t + {fase_y:.4f})")
+    # print(f"Diferença de fase: {fase:.2f}")
 
-    
-
-    print("A: ", A)
-    print("B: ", B)
-    angulo = m.atan2(A,B)*180/m.pi
-    angulo = angulo
-    print("Angulo força: ", angulo)
-    w = 2 * np.pi * fx
-    #
-    # angulo = m.degrees(m.atan2(A, B))
-    # fase = (fase_x - fase_y)*180/np.pi
-    #
-    print("============== VEL Prod =========================")
-    print("Vel Prod 1.0")
-    # shi = calculate_phase_shift(t, ax, ay)
-    # print("phase_shift: ", shi)
-    #
-    A, fase_x = coss(A, ax, t,fx, 0)
-    B, fase_y = coss(B, ay, t, fx, fase)
-    print(f"--- Funções do Acelerômetro (Frequência: {fx:.2f} Hz) ---")
-    print(f"w = {w:.4f} rad/s")
-    print(f"ax = {A:.4f} * cos({w:.4f}t + {fase_x:.4f})")
-    print(f"ay = {B:.4f} * cos({w:.4f}t + {fase_y:.4f})")
-    print(f"Diferença de fase: {fase:.2f}")
-
-    print("")
-    vp.vel_prod(A,B,fx,fase_x, fase_y)
+    # print("")
+    # vp.vel_prod(A,B,fx,fase_x, fase_y)
 
     #plot_integral(A,B,fase_x, fase_y, f_maior)
 

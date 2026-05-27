@@ -87,6 +87,7 @@ def vel_atr2(A, B, f, a, b):
 
 
 
+def sinal_estatico()
 def vel_atr(A,B,f,a,b):
     print("============== VEL ATR =========================")
     ms = 1
