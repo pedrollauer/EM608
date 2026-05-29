@@ -269,9 +269,8 @@ def analisar_acelerometro(arquivo):
     #(interpolacao cubica)
     #plot_compare2(ax,t,t)
     va.vel_atr(ax, ay, az, t)
-
     
-    va.vel_atr(ax, ay, az, t)
+    # va.vel_atr(ax, ay, az, t)
     #ax, ay, az = desinclinar_sinal(ax, ay, az)
     # g = m.sqrt(gx**2 + gy**2 + gz**2)
     # gx = np.mean(ax)

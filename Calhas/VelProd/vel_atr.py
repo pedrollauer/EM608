@@ -1,11 +1,58 @@
 import numpy as np
+import time
 import math as m
 from scipy.interpolate import CubicSpline
 import math as m
 import matplotlib.pyplot as plt
 import scipy.integrate as integrate
 
-_debug = True
+_debug = False
+
+def print_graph(pos_prod_x:float, pos_prod_y:float, pos_c_x:float, pos_c_y:float):
+    """
+            Plotar produto e calha
+    """
+
+    # tamanho da figura
+    #print(1*'\n')
+
+    # fatores de escala
+    f_c_x = 1
+    f_c_y = 1
+    f_p_x = 1
+    f_p_y = 1
+
+    # configs da imagem
+    pad_x = 100
+    pad_y = 20
+
+    # config corpos rigidos
+    l_calha = 10
+    produto = '*'
+    calha = ''
+    
+    # transformacoes
+    pxc = int(pos_c_x)
+    pyc = int(pos_c_y)
+
+    pad_x = abs(pad_x + pxc)*" "
+    pad_y = abs(pad_y + pyc)
+
+    calha = pad_x + l_calha*"="
+
+    num_l = pad_y +1
+    
+    plot = f'\033[{num_l}A'
+    plot += pad_y*"\033[K\n"
+    plot += "\033[K" + calha + "\n"
+
+    print(plot, end="", flush=True)
+    time.sleep(0.1)
+
+def _print(texto:str=""):
+    if _debug:
+        print(texto)
+
 def sinal_estatico(sinais):
     ss = []
     for i in range(0, len(sinais)):
@@ -107,7 +154,7 @@ def vel_atr(ax, ay, az,t, ciclos=0):
     # Ciclo de simulação
     v_rel.append(0)
     for i in range (0, 1000):
-
+        print_graph(0,0,ax[i],ay[i])
         # Estática
         if(deslocando == False):
             
@@ -115,7 +162,7 @@ def vel_atr(ax, ay, az,t, ciclos=0):
             Fat_est.append(forca_atrito_est(ax[i], mu,mu_s, ms, N[i], v_rel[i]))
 
             if(Fat_est[i] == 0):
-                print(f"{i} Produto descolou.")
+                _print(f"{i} Produto descolou.")
                 deslocando = True
                 Fat_est.append(forca_atrito_est(ax[i], mu,mu_s, ms, N[i], ax[i]))
                 continue
@@ -134,7 +181,7 @@ def vel_atr(ax, ay, az,t, ciclos=0):
             v_rel.append(0)
         else:
             v_rel.append(v_rel[i])
-        
+        #a = input() 
         ### Cinemática
         if(_debug):
             print(f"===== PASSO {i} ======")
