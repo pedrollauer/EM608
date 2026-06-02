@@ -49,6 +49,12 @@ def print_graph(pos_prod_x:float, pos_prod_y:float, pos_c_x:float, pos_c_y:float
     print(plot, end="", flush=True)
     time.sleep(0.1)
 
+def _input(texto:str=""):
+    if _debug:
+        r = input(texto)
+        return r
+    return ""
+
 def _print(texto:str=""):
     if _debug:
         print(texto)
@@ -69,21 +75,50 @@ def modulo(vetor):
     else:
         return -1
 
-def forca_atrito_est(ax,mu, m_s, ms, N, v_rel):
-    if(v_rel != 0):
-        return -np.sign(v_rel)*m_s*N
+def forca_atrito_est(ax,mu, m_s, m_prod, N, dir_vel):
+    """
+    ESTE MÈTODO CALCULA A FORCA DE ATRITO E RETORNA UM VETOR
+    O PRIMEIRO TERMO É 1 SE O ATRITO É ESTÁTICO E -1 SE O A-
+    TRITO É DINÂMICO E ZERO SE O PRODUTO DECOLOU TOTALMENTE.
+    O SEGUNDO TERMO CONTEM O VALOR DA FORÇA DE ATRITO COM O 
+    SENTIDO.
+
+    ax      - ACELERACAO EM X
+    mu      - COEFICIENTE DE ATRITO ESTÁTICO
+    m_s     - COEFICIENTE DE ATRITO DINÂMICO
+    m_prod      - MASSA
+    N       - FORÇA NORMAL
+    dir_vel - DIREÇÃO DA VELOCIDADE
+
+    """
     Fat_lim = N*mu
+    Fat = m_prod*ax
+    if N < 0:
+        return 0,0
 
-    Fat = ms*ax
-
-    if(abs(Fat) > Fat_lim):
-        Fat = N*m_s
-        return 0
+    if(dir_vel != 0 or abs(Fat) > Fat_lim ):
+        return -1 ,-np.sign(dir_vel)*m_s*N
     else:
-        return Fat
+        return 1,Fat
 
     
     return Fat
+
+
+def plot_compare(ax,ay,t,t1):
+
+    fig, ax1 = plt.subplots()
+    
+    ax1.plot(t, ax, color='blue', linewidth=2, label='X')
+    ax1.plot(t1, ay, color='orange', linewidth=2, label='Y')
+
+    ax1.set_title(f'Exp vs Trat', fontsize=14)
+    ax1.set_ylabel('Amplitude (Original)', fontsize=11)
+    ax1.grid(True, linestyle='--', alpha=0.5)
+    ax1.legend(loc='upper right')
+    
+    plt.xlim(5, 5.1)
+    plt.show()
 
 def plot_compare2(ax,ay,t):
 
@@ -111,8 +146,8 @@ def vel_atr(ax, ay, az,t, ciclos=0):
 
     # Configurações
     mu = 0.5 # C atrito estático
-    mu_s = mu*0.2 # C atrito dinâmico
-    ms = 0.001 # Massa
+    mu_c = mu*0.2 # C atrito dinâmico
+    m_prod = 0.001 # Massa
 
     ss = sinal_estatico([ax, ay, az])
 
@@ -125,7 +160,12 @@ def vel_atr(ax, ay, az,t, ciclos=0):
     sply = CubicSpline(t, ay)
     splz = CubicSpline(t, az)
 
+    # aax = ax.copy()
+    # aay = ay.copy()
+    # ttt = t.copy()
+
     t = np.linspace(0, t[len(t)-1], len(t)*10)
+    
 
     ax = splx(t)
     ay = sply(t)
@@ -133,75 +173,147 @@ def vel_atr(ax, ay, az,t, ciclos=0):
 
     
     svx = splx.antiderivative() 
-    vx = svx(t)
-    vx = vx #- np.mean(vx)
-    #vx = integral(ax,t)
+    svy = sply.antiderivative() 
 
+    vx = svx(t)
+    vy = svy(t)
+
+    ssx = svx.antiderivative() 
+    ssy = svy.antiderivative() 
+
+    sx = ssx(t)
+    sy = ssy(t)
+
+    #vx = vx #- np.mean(vx)
+
+    #vx = integral(ax,t)
     #plot_compare2(vx,ax*0,t)
 
-    g = modulo(ss) 
+    #plot_compare(ay,aay,t,ttt)
+
+    mass_acc = modulo(ss) 
+    g = -9.81
     a_rel_prod = []
     v_rel = [] # Velocidade relativa do produto
     v_prod = [] # Velocidade absoluta
     s_prod = 0
-    P = ms*g
-    N = [10]
+    P = m_prod*g
+    N = []
     F_at = []
     Fat_est = []
 
     Fat_din = 0
-    deslocando = False
+    descolado = False
+    
+    d_vel_x = 0 # SENTIDO VEL X ZERO SE O PRODUTO ESTÁ PARADO, 1 SE POSITIVO, -1 SE NEGATIVO
+    
+    ### CINEMÁTICA ABSOLUTA DO PRODUTO
+    v_a_x = 0 # VELOCIDADE ABSOLUTA DE X NO INSTANTE QUE O PRODUTO PULA
+    v_a_y = 0 # VELOCIDADE ABSOLUTA DE Y NO INSTANTE QUE O PRODUTO PULA
+    s_a_y = 0 # POSICAO ABSOLUTA DE Y
+
+    S_delize = 0
+    S_voo = 0
 
     # Ciclo de simulação
-    v_rel.append(0)
-    for i in range (0, 1000):
+    for i in range (0, len(t)):
+
+        ### DINÂMICA ### 
+        N.append(-P + m_prod*ay[i])
+        fat = forca_atrito_est(ax[i], mu,mu_c, m_prod, N[i], d_vel_x)
+        Fat_est.append(fat[1]) # FAT 
+
+        ### PRINTS ###
+
         _print(f"=== PASSO {i} ===")
+        _print(f"t: {t[i]}")
         _print(f"AX: {ax[i]}")
         _print(f"AY: {ay[i]}")
         _print(f"VX: {vx[i]}")
         _print(f"N: {N[i]}")
-        FATMAX = N[i]*mu_s
+        FATMAX = N[i]*mu
+
         _print(f"FATMAX: {FATMAX}")
-        _print(f"MAX: {ms*ax[i]}")
-        _print(f"VELREL: {v_rel[i]}")
+        _print(f"FADERENCIA: {m_prod*ax[i]}")
         _print(f"SPROD: {s_prod}")
-        ### Cinemática
+
         _print(f"g :  {g} m/s2")
         _print(f"P : {P} kg")
         _print(f"N : {P} kg")
 
-        # Estática
-        if(deslocando == False):
-            
-            N.append(P - ms*ay[i])
-            Fat_est.append(forca_atrito_est(ax[i], mu,mu_s, ms, N[i], v_rel[i]))
+        ### PRINTS ###
 
-            if(Fat_est[i] == 0):
-                _print(f"{i} Produto descolou.")
-                deslocando = True
-                Fat_est.append(forca_atrito_est(ax[i], mu,mu_s, ms, N[i], ax[i]))
-                v_rel.append(0) ### O produto começa a deslocar com velocidade zero
+        ### Cinemática ###
+
+        # PRODUTO DESCOLOU
+        if fat[0] == 0 and descolado == False:
+            descolado = True
+
+            if i-1 >=0:
+                v_a_x = vx[i] + v_rel[i-1]
+
+            else:
+                v_a_x = vx[i]
+
+            v_a_y = vy[i]
+            s_a_y = sy[i]
+            # s_a_x = sx[i]
+
+            v_rel.append(v_a_x-vx[i])
+            _print(f"SAY: {s_a_y}")
+            _input()
+            continue 
+        
+        if(descolado == True):
+            s_a_y += v_a_y*(t[i] - t[i-1]) + g*((t[i]**2 - 2*t[i]*t[i-1] +t[i-1]**2))/2
+            v_a_y = v_a_y +g*(t[i] - t[i-1])
+            v_rel.append(v_a_x - vx[i])
+
+            if sy[i] < s_a_y:
+                #s_prod += v_a_x*(t[i] -t[i-1])
+                s_prod += v_rel[i]*(t[i] -t[i-1]) # MOVIMENTO RETILÍNEO UNIFORME EM X
+                S_voo += v_rel[i]*(t[i] -t[i-1]) 
                 continue
+
+            #CONDIÇÃO DE RETORNO            
+            if(sy[i] >= s_a_y):
+                descolado = False
+                d_vel_x = np.sign(v_rel[-1])
+                fat = forca_atrito_est(ax[i], mu,mu_c, m_prod, N[i], d_vel_x)
+                Fat_est[i] = fat[1]
+                continue
+                # s_prod += s_a_x - sx[i] # DIFERENÇA ENTRE A POSICAO EM QUE O PRODUTO DEIXOU E ENCONTROU A CALHA
+
+        # PRODUTO PARADO EM RELAÇÃO À CALHA
+        if(d_vel_x == 0 and descolado == False):
+
+            # VEMOS SE O ATRITO É DINÂMICO
+            if(fat[0] == -1):
+                _print(f"{i} Produto descolou.")
+                d_vel_x = (-1)*(np.sign(ax[i]))
+
             v_rel.append(0)
             continue
 
-        # print("LENFAT: ", len(Fat_est))
-        # print("LENVEL: ", len(v_rel))
+        # PRODUTO MOVENDO-SE EM RELAÇÃO À CALHA
+        elif(descolado == False and i > 0): 
+            a_rel = ((fat[1]/m_prod)-ax[i])
+            v_rel.append(v_rel[i-1] + (t[i] - t[i-1])*(a_rel))
+            s_prod += v_rel[i]*(t[i] - t[i-1])
+            S_delize += v_rel[i]*(t[i] - t[i-1])
 
-        ### Dinâmica
-        N.append(P - ms*ay[i])
-        #v_rel = v_rel[i-1] - (Fat_est/ms)*t[i]
-        v_rel.append(v_rel[i-1]+ (t[i] - t[i-1])*((Fat_est[i]/ms)-ax[i]))
-        #Fat_est.append(forca_atrito_est(ax[i], mu,mu_s, ms, N[i], v_rel[i]))
-        #Fat_est.append(mu_s*N[i]) 
-        s_prod += v_rel[i]*(t[i]) - v_rel[i]*(t[i-1])
-        # Condicao de parada
-        if (v_rel[i-1] * v_rel[i]) <= 0:
-            deslocando = False
-            v_rel.append(0)
-            _print(f"Produto colou")
-        else:
-            v_rel.append(v_rel[i])
+            # Condicao de parada
+            if (v_rel[i-1] * v_rel[i]) < 0:
+                v_rel[i] = 0 # PRODUTO PAROU A VELOCIDADE CALCULADA INICIALMENTE ESTÁ ERRADA E VALE ZERO
+                _print(f"Produto colou.")
+                d_vel_x = 0
+            else:
+                d_vel_x = np.sign(v_rel[i])
+        ### Cinemática ###
 
+    ### RESULTADOS FINAIS ###
     VELATR = s_prod/t[len(t)-1]
+
     print(f"VELATR: {VELATR*60} m/min")
+    print(f"DELS DESLIZE: {S_delize} m")
+    print(f"DESL VOO: {S_voo} m")
