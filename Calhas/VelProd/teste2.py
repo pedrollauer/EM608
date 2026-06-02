@@ -330,18 +330,18 @@ def analisar_acelerometro(arquivo):
 if __name__ == "__main__":
     print("==================== Calha Boa 1=========================")
     analisar_acelerometro('./dados/b_1.txt')
-    # print("==================== Calha Boa 2=========================")
-    # analisar_acelerometro('./dados/b_2.txt')
-    # print("==================== Calha Boa 3=========================")
-    # analisar_acelerometro('./dados/b_3.txt')
-    # print("\n\n")
+    print("==================== Calha Boa 2=========================")
+    analisar_acelerometro('./dados/b_2.txt')
+    print("==================== Calha Boa 3=========================")
+    analisar_acelerometro('./dados/b_3.txt')
+    print("\n\n")
 
 
-    # print("==================== Calha Ruim 1=========================")
-    # analisar_acelerometro('./dados/r_1.txt')
+    print("==================== Calha Ruim 1=========================")
+    analisar_acelerometro('./dados/r_1.txt')
 
-    # print("==================== Calha Ruim 2=========================")
-    # analisar_acelerometro('./dados/r_2.txt')
+    print("==================== Calha Ruim 2=========================")
+    analisar_acelerometro('./dados/r_2.txt')
 
-    # print("==================== Calha Ruim 3=========================")
-    # analisar_acelerometro('./dados/r_3.txt')
+    print("==================== Calha Ruim 3=========================")
+    analisar_acelerometro('./dados/r_3.txt')

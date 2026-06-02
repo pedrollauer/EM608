@@ -143,8 +143,9 @@ def vel_atr(ax, ay, az,t, ciclos=0):
     a_rel_prod = []
     v_rel = [] # Velocidade relativa do produto
     v_prod = [] # Velocidade absoluta
+    s_prod = 0
     P = ms*g
-    N = []
+    N = [10]
     F_at = []
     Fat_est = []
 
@@ -154,7 +155,21 @@ def vel_atr(ax, ay, az,t, ciclos=0):
     # Ciclo de simulação
     v_rel.append(0)
     for i in range (0, 1000):
-        print_graph(0,0,ax[i],ay[i])
+        _print(f"=== PASSO {i} ===")
+        _print(f"AX: {ax[i]}")
+        _print(f"AY: {ay[i]}")
+        _print(f"VX: {vx[i]}")
+        _print(f"N: {N[i]}")
+        FATMAX = N[i]*mu_s
+        _print(f"FATMAX: {FATMAX}")
+        _print(f"MAX: {ms*ax[i]}")
+        _print(f"VELREL: {v_rel[i]}")
+        _print(f"SPROD: {s_prod}")
+        ### Cinemática
+        _print(f"g :  {g} m/s2")
+        _print(f"P : {P} kg")
+        _print(f"N : {P} kg")
+
         # Estática
         if(deslocando == False):
             
@@ -165,27 +180,28 @@ def vel_atr(ax, ay, az,t, ciclos=0):
                 _print(f"{i} Produto descolou.")
                 deslocando = True
                 Fat_est.append(forca_atrito_est(ax[i], mu,mu_s, ms, N[i], ax[i]))
+                v_rel.append(0) ### O produto começa a deslocar com velocidade zero
                 continue
             v_rel.append(0)
             continue
+
+        # print("LENFAT: ", len(Fat_est))
+        # print("LENVEL: ", len(v_rel))
 
         ### Dinâmica
         N.append(P - ms*ay[i])
         #v_rel = v_rel[i-1] - (Fat_est/ms)*t[i]
         v_rel.append(v_rel[i-1]+ (t[i] - t[i-1])*((Fat_est[i]/ms)-ax[i]))
-        Fat_est.append(forca_atrito_est(ax[i], mu,mu_s, ms, N[i], v_rel[i]))
-
+        #Fat_est.append(forca_atrito_est(ax[i], mu,mu_s, ms, N[i], v_rel[i]))
+        #Fat_est.append(mu_s*N[i]) 
+        s_prod += v_rel[i]*(t[i]) - v_rel[i]*(t[i-1])
         # Condicao de parada
         if (v_rel[i-1] * v_rel[i]) <= 0:
             deslocando = False
             v_rel.append(0)
+            _print(f"Produto colou")
         else:
             v_rel.append(v_rel[i])
-        #a = input() 
-        ### Cinemática
-        if(_debug):
-            print(f"===== PASSO {i} ======")
-            print(f"g :  {g} m/s2")
-            print(f"P : {P} kg")
-            print(f"N : {P} kg")
 
+    VELATR = s_prod/t[len(t)-1]
+    print(f"VELATR: {VELATR*60} m/min")
